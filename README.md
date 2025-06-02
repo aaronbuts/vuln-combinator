@@ -1,25 +1,13 @@
-## Vulnerability Combinator (VulnCombinator)
-
-**VulnCombinator** — это CLI-инструмент, предназначенный для анализа возможных комбинаций уязвимостей и оценки совокупного риска. Он помогает специалистам по безопасности выявлять потенциальные цепочки атак на основе заданной уязвимости.
-
----
-
-### Возможности
-
-* Поиск всех возможных комбинаций уязвимостей по `rules.json`
-* Обратный поиск (где уязвимость встречается в связке, а не как базовая)
-* Расчет комбинированного риска с учетом коэффициента взаимодействия
-* Экспорт результатов в файл
 
 ---
 
 ### Структура проекта
 
 ```
-vulncombinator/
-├── core.py         # Логика поиска и расчета
-├── vulncombinator.py         # CLI-интерфейс
-├── rules.json      # База правил с комбинациями
+porncombinator/
+├── core.py              # Логика поиска и расчёта возбуждения
+├── porncombinator.py    # CLI-интерфейс
+├── rules.json           # База правил с эротическими сочетаниями
 ```
 
 ---
@@ -27,72 +15,70 @@ vulncombinator/
 ### Установка
 
 ```bash
-git clone https://github.com/wakeuppls/vuln-combinator.git
-cd vuln-combinator
-python vulncombinator.py --help
+git clone https://github.com/wakeuppls/porn-combinator.git
+cd porn-combinator
+python porncombinator.py --help
 ```
 
 ---
 
 ### Примеры использования
 
-Найти все комбинации для XSS:
+Найти все возбуждающие комбинации с участием ролевых игр:
 
 ```bash
-python vulncombinator.py --vuln XSS
+python porncombinator.py --genre roleplay
 ```
 
-Найти все случаи, где XSS используется в связках (не только как базовая уязвимость):
+Найти все случаи, где ролевые игры участвуют в связках, но не как основной элемент:
 
 ```bash
-python vulncombinator.py --vuln XSS --reverse
+python porncombinator.py --genre roleplay --reverse
 ```
 
-Сохранить результат в файл:
+Сохранить возбуждающие сценарии в файл:
 
 ```bash
-python vulncombinator.py --vuln XSS --reverse --export results.txt
+python porncombinator.py --genre roleplay --reverse --export fantasies.txt
 ```
 
-Рассчитать комбинированный риск:
+Рассчитать совокупный возбуждающий эффект:
 
 ```bash
-python vulncombinator.py --risk 7.2 5.0 1.3
+python porncombinator.py --arousal 8.1 6.7 1.5
 ```
 
 ---
 
-### Пример правила (`rules.json`)
+### Пример эротического правила (`rules.json`)
 
 ```json
 {
-  "base_vuln": "XSS",
-  "combined_with": ["CSRF"],
-  "goal": "Account takeover",
-  "risk_score": 8.5,
-  "description": "Use XSS to inject a malicious form that exploits CSRF for unauthorized actions."
+  "base_genre": "roleplay",
+  "combined_with": ["bondage"],
+  "goal": "Maximum immersion and tension",
+  "arousal_score": 9.2,
+  "description": "Combine roleplay with light bondage for heightened psychological and physical engagement."
 }
 ```
 
 ---
 
-### Экспорт результатов
+### Экспорт фантазий
 
-Флаг `--export <file>` позволяет сохранить найденные комбинации в текстовый файл.
+Флаг `--export <file>` позволяет сохранить найденные сценарии в текстовый файл — удобно для съёмок, планирования или вдохновения.
 
 ---
 
-### Модель оценки риска
+### Модель расчёта возбуждения
 
-Комбинированный риск рассчитывается по формуле:
+Возбуждающий эффект рассчитывается по формуле:
 
 ```
-R_combo = 10 × (1 - (1 - R1/10) × (1 - R2/10) × 1/C)
+A_combo = 10 × (1 - (1 - A1/10) × (1 - A2/10) × 1/C)
 ```
 
 где:
 
-* `R1`, `R2` — индивидуальные риски уязвимостей (по шкале 0–10)
-* `C` — коэффициент взаимодействия
-
----
+* `A1`, `A2` — индивидуальные уровни возбуждения от жанров (по шкале 0–10)
+* `C` — коэффициент возбуждающего взаимодействия
